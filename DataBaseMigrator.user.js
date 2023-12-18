@@ -2,15 +2,15 @@
 // @name         Vine Viewer Database Converter
 // @namespace    http://tampermonkey.net/
 // @version      0.2.5
-// @updateURL    https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/DataBaseMigrator.user.js
-// @downloadURL  https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/DataBaseMigrator.user.js
+// @updateURL    https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer-uk/main/DataBaseMigrator.user.js
+// @downloadURL  https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer-uk/main/DataBaseMigrator.user.js
 // @description  Converts VineViewer Database to Vine Explorer Database
 // @author       MarkusSR1984
 // @match        *://www.amazon.de/vine/*
 // @match        *://amazon.de/vine/*
 // @match        *://www.amazon.de/-/en/vine/*
 // @license      MIT
-// @icon         https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/vine_logo.png
+// @icon         https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer-uk/main/vine_logo.png
 // @run-at       document-idle
 // @grant        GM.xmlHttpRequest
 // @grant        GM.openInTab
@@ -365,7 +365,7 @@ function downloadDatabase() {
     database.getAll((db) => {
         const element = document.createElement('a');
         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(db, null, 4)));
-        element.setAttribute('download', 'AmazonVineExplorerDatabase.json');
+        element.setAttribute('download', 'AmazonVineExplorer-ukDatabase.json');
 
         element.style.display = 'none';
         document.body.appendChild(element);

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
 // @namespace    http://tampermonkey.net/
-// @version      0.10.3.2
+// @version      0.10.3.2.1
 // @updateURL    https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/VineExplorer.user.js
 // @description  Better View, Search and Explore for Amazon Vine Products - Vine Voices Edition

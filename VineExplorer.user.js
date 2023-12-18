@@ -921,7 +921,7 @@ function addAveSettingsTab(){
         _upperSettingsButton.id = 'vvp-ave-settings-tab';
         _upperSettingsButton.classList = 'a-tab-heading';
         _upperSettingsButton.role = 'presentation';
-        _upperSettingsButton.innerHTML += `<a role="tab" aria-selected="false" tabindex="-1">AVE Einstellungen</a>`;
+        _upperSettingsButton.innerHTML += `<a role="tab" aria-selected="false" tabindex="-1">Settings</a>`;
 
         _upperSettingsButton.addEventListener('click',function(){
             const _upperButtons = document.body.querySelectorAll('.a-tab-container.vvp-tab-set-container > ul > li');

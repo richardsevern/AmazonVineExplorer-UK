@@ -5,7 +5,7 @@
 // @updateURL    https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/VineExplorer.user.js
 // @description  Better View, Search and Explore for Amazon Vine Products - Vine Voices Edition
-// @author       MarkusSR1984, Christof121
+// @author       rs
 // @match        *://www.amazon.co.uk/*
 // @license      MIT
 // @icon         https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/vine_logo.png
@@ -23,23 +23,25 @@
 // ==/UserScript==
 
 /* 
-    Versioning: 
-    a.b.c[.d]
 
-    a => Hauptversion(Major), ändert sich nur bei breaking oder anderen gravirenden änderungen. Solle In diesem Fall also die 1 nie überschreiten.
-    b => Feature(Minor), ändert sich nur wenn neue Features hinzukommen oder gößere umstellungen im Hintergrund passiert sind
-    c => Patch, kleinere Änderungen oder "größere" Bugfixes
-    d => Micro(OPTIONAL), kleine Bugfixes die nur wenige Zeilen Code beinhalten. Wird normalerweise nicht an die Versionnummer angehängt und nur in ausnahmefällen verwendet. Wie z.B. 0.6.4.1 - Das war nur eine Fehlerhafte Variablendeklaration. musste aber public gehen weil es ein Breaking Bug war
+Versioning:
+a.b.c[.d]
 
-    Sammlung der Ideen:
-    - Pageination nach oben schieben || Kopieren
-    - Tooltipp mit der langen Beschreibung auf der kurzen
-    - Bestellte Produkte mit Tag versehen ?
-    - Automatisches Bestellen via Prioliste ?!?
+a => Major version, only changes with breaking or other significant modifications. Should never exceed 1 in this case.
+b => Minor version, changes only when new features are added or significant background changes occur.
+c => Patch, minor changes or "larger" bug fixes.
+d => Micro (OPTIONAL), small bug fixes that involve only a few lines of code. Normally not appended to the version number and used only in exceptional cases. For example, 0.6.4.1 - This was just a faulty variable declaration but had to go public because it was a breaking bug.
 
-    Todo:
-    - Reload der Neue Produkte Seite nach einem Click auf "Alle als gesehen Markieren"
-    - Originale Pagination auf den eigenen Seiten verstecken
+Collection of Ideas:
+
+Move pagination upwards || Copy
+Tooltip with the long description on the short one
+Tag ordered products?
+Automatic ordering via priority list??
+To-Do:
+
+Reload the "New Products" page after clicking "Mark All as Seen"
+Hide original pagination on own pages
 */
 
 'use strict';

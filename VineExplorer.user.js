@@ -535,7 +535,7 @@ async function createProductSite(siteType, productArray, cb) {
     // Edit Top Line
     if (_tilesContainer) {
         const _topLine = _tilesContainer.getElementsByTagName('p')[0];
-        _topLine.innerHTML = `<p>Anzeigen von <strong>${_fastCount}</strong> von <strong>${_productArrayLength}</strong> Ergebnissen</p>`
+        _topLine.innerHTML = `<p>Displaying <strong>${_fastCount}</strong> of <strong>${_productArrayLength}</strong> Results</p>`
     }
 
     const _tilesGrid = document.getElementById('vvp-items-grid');

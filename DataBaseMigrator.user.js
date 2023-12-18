@@ -5,15 +5,11 @@
 // @updateURL    https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/DataBaseMigrator.user.js
 // @downloadURL  https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/DataBaseMigrator.user.js
 // @description  Converts VineViewer Database to Vine Explorer Database
-// @author       MarkusSR1984
-// @match        *://www.amazon.de/vine/*
-// @match        *://amazon.de/vine/*
-// @match        *://www.amazon.de/-/en/vine/*
-// @match        *://www.amazon.co.uk/vine/*
+// @author       rs
 // @match        *://amazon.co.uk/vine/*
 // @match        *://www.amazon.co.uk/-/en/vine/*
 // @license      MIT
-// @icon         https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer-uk/main/vine_logo.png
+// @icon         https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/vine_logo.png
 // @run-at       document-idle
 // @grant        GM.xmlHttpRequest
 // @grant        GM.openInTab

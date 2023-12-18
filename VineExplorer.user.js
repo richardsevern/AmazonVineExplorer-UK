@@ -2156,8 +2156,8 @@ function updateNewProductsBtn() {
  */
 function desktopNotifikation(title, message, image = null, requireInteraction = null, onClick = () => {}) {
     const _vineLogo = 'https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/vine_logo.png';
-    const _vineLogoImp = 'https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/vine_logo_important.png'
-    const _defaultImage = 'https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/vine_logo_notification_image.png'
+    const _vineLogoImp = 'https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/vine_logo_important.png'
+    const _defaultImage = 'https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/vine_logo_notification_image.png'
 
     if (Notification.permission === 'granted') {
         const _notification = new Notification(title, {

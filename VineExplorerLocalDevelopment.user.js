@@ -4,10 +4,9 @@
 // @version      9.9.9
 // @description  Better View and Search and Explore for Vine Products - Vine Voices Edition
 // @author       MarkusSR1984
-// @match        *://www.amazon.de/*
-// @match        *://www.amazon.com/*
+// @match        *://www.amazon.co.uk/*
 // @license      MIT
-// @icon         https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/vine_logo.png
+// @icon         https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/vine_logo.png
 // @run-at       document-start
 // @grant        GM_registerMenuCommand
 // @grant        GM_getValue
@@ -23,20 +22,19 @@
 // @require      file://D:\Nextcloud New\SourceTree\AmazonVineExplorer\VineExplorer.user.js
 // ==/UserScript==
 
-/**
- * Zuerst muss Tampermonkey das recht gegeben werden auf lokale Dateien zugreifen zu dürfen:
- * - Abhängig voneurem Browser ind die Erweiterungsverwaltung gehen
- * - Bei Tampermonkey auf Details klicken
- * - Auf der Seite die Option "Zugriff auf Datei-URLs zulassen" aktivieren
- * 
- * Dieses Template als eigenes script in Tampermonkey hinzufügen oder mit dem link istallieren
- * - https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/dev-main/VineExplorerLocalDevelopment.user.js
- * - Die Pfade der Dateien bei @require and eure localen Pfade anpassen
- * 
- * NICHT VERGESSEN die Onlineversion deaktivieren wenn ihr mit dieser arbeitet
- * 
- * Die @grant Einstellungen immer gegenchecken, da die Header des Hauptscripts nicht beachtet werden und Tampermonkey nur die hier gesetzten Optionen verwendet
- * 
- * Vorteil: Lokale Dateiänderungen werden sofort nach Websitereload angewendet, das macht das entwickeln leichter und effektiver
- */
 
+/** 
+* First, Tampermonkey needs to be granted the right to access local files:
+* Depending on your browser, go to the extension management
+* Click on Details for Tampermonkey
+* On the page, activate the option "Allow access to file URLs"
+* Add this template as your own script in Tampermonkey or install it with the following link:
+* 
+* https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/dev-main/VineExplorerLocalDevelopment.user.js
+* Adjust the paths of the files in @require to your local paths
+* DO NOT FORGET to disable the online version if you are working with this one.
+* 
+* Always check the @grant settings, as the headers of the main script are not considered, and Tampermonkey only uses the options set here.
+* 
+* Advantage: Local file changes take effect immediately after a website reload, making development easier and more efficient.
+ */

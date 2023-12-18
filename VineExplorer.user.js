@@ -2,14 +2,14 @@
 // @name         Amazon Vine Explorer
 // @namespace    http://tampermonkey.net/
 // @version      0.10.3.2
-// @updateURL    https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/VineExplorer.user.js
-// @downloadURL  https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/VineExplorer.user.js
+// @updateURL    https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/VineExplorer.user.js
+// @downloadURL  https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/VineExplorer.user.js
 // @description  Better View, Search and Explore for Amazon Vine Products - Vine Voices Edition
 // @author       MarkusSR1984, Christof121
 // @match        *://www.amazon.de/*
 // @match        *://www.amazon.com/*
 // @license      MIT
-// @icon         https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/vine_logo.png
+// @icon         https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/vine_logo.png
 // @run-at       document-start
 // @grant        GM_getValue
 // @grant        GM_setValue
@@ -17,9 +17,9 @@
 // @grant        GM.setValue
 // @grant        GM.xmlHttpRequest
 // @grant        unsafeWindow
-// @require      https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/globals.js
-// @require      https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/class_db_handler.js
-// @require      https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/class_product.js
+// @require      https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/globals.js
+// @require      https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/class_db_handler.js
+// @require      https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/class_product.js
 
 // ==/UserScript==
 
@@ -105,7 +105,7 @@ const database = new DB_HANDLER(DATABASE_NAME, DATABASE_OBJECT_STORE_NAME, DATAB
                 init(false);
             });
         } else if (SITE_IS_SHOPPING) {
-            console.log('We are on Amazon Shopping'); // We are on normal amazon shopping - maybe i hve forgotten any other site then we have to add it as not here
+            console.log('We are on Amazon Shopping'); // We are on normal amazon shopping - maybe i have forgotten any other site then we have to add it as not here
             _execLock = true;
             addBranding(); // For now, olny show that the script is active
         }
@@ -171,7 +171,7 @@ function handleInfiniteScroll() {
             blockHandleInfiniteScroll = false;  
             return;
         } else if (infiniteScrollTilesBufferArray.length < 1000 && infiniteScrollLastPreloadedPage < infiniteScrollMaxPreloadPage) {
-            const _baseUrl = (/(http[s]{0,1}\:\/\/[w]{0,3}.amazon.[a-z]{1,}\/vine\/vine-items)/.exec(window.location.href))[1];
+            const _baseUrl = (/(http[s]{0,1}\:\/\/[w]{0,3}.amazon\.co\.uk\/vine\/vine-items)/.exec(window.location.href))[1];
             infiniteScrollLastPreloadedPage++;
             getTilesFromURL(`${_baseUrl}?queue=encore&pn=&cn=&page=${infiniteScrollLastPreloadedPage}`, (tiles) =>{
                 infiniteScrollTilesBufferArray = infiniteScrollTilesBufferArray.concat(tiles);
@@ -192,7 +192,7 @@ function getUrlParameter(name) {
 }
 
 function detectCurrentPageType(){
-    if (/http[s]{0,1}\:\/\/[w]{0,3}.amazon.[a-z]{1,}\/vine\/vine-items$/.test(window.location.href)) {
+    if (/http[s]{0,1}\:\/\/[w]{0,3}.amazon\.co\.uk\/vine\/vine-items$/.test(window.location.href)) {
         currentMainPage = PAGETYPE.ORIGINAL_LAST_CHANCE;
     } else if (getUrlParameter('queue') == 'last_chance') {
         currentMainPage = PAGETYPE.ORIGINAL_LAST_CHANCE;
@@ -677,7 +677,7 @@ function createNewSite(type, data) {
         case PAGETYPE.ALL:{
             currentMainPage = PAGETYPE.ALL;
             createInfiniteScrollSite((tilesContainer) => {
-                const _baseUrl = (/(http[s]{0,1}\:\/\/[w]{0,3}.amazon.[a-z]{1,}\/vine\/vine-items)/.exec(window.location.href))[1];
+                const _baseUrl = (/(http[s]{0,1}\:\/\/[w]{0,3}.amazon\.co\.uk\/vine\/vine-items)/.exec(window.location.href))[1];
                 const _preloadPages = ['potluck', 'last_chance', 'encore']
                 infiniteScrollLastPreloadedPage = 1;
                 infiniteScrollMaxPreloadPage = 100;
@@ -1709,7 +1709,7 @@ async function cleanUpDatabase(cb = () => {}) {
 
 
                 let _notSeenCounter = 0;
-                if (_currEntry.data_recommendation_type == 'VENDOR_TARGETED' &&  _currEntry.ts_lastSeen > (unixTimeStamp() - SECONDS_PER_DAY)) { // If PotLuck start revoving after 1 day
+                if (_currEntry.data_recommendation_type == 'VENDOR_TARGETED' &&  _currEntry.ts_lastSeen > (unixTimeStamp() - SECONDS_PER_DAY)) { // If PotLuck start removing after 1 day
                     _notSeenCounter++;
                 } else if (_currEntry.ts_lastSeen > (unixTimeStamp() - SECONDS_PER_WEEK)) { // Normal Product Start Removing after 1 week
                     _notSeenCounter++;
@@ -1841,7 +1841,7 @@ function initBackgroundScan() {
     if  (!SETTINGS.EnableBackgroundScan) {console.warn('initBackgroundScan(): Backgroundscan is disabled => Exit');return;}
     if (!AVE_IS_THIS_SESSION_MASTER) {console.warn('initBackgroundScan(): This Instance is not the Master Session! => don´t start BackgroundScan'); return;}
     BackGroundScanIsRunning = true;
-    const _baseUrl = (/(http[s]{0,1}\:\/\/[w]{0,3}.amazon.[a-z]{1,}\/vine\/vine-items)/.exec(window.location.href))[1];
+    const _baseUrl = (/(http[s]{0,1}\:\/\/[w]{0,3}.amazon\.co\.uk\/vine\/vine-items)/.exec(window.location.href))[1];
 
     // Create iFrame if not exists
     if (!document.querySelector('#ave-iframe-backgroundloader')) {
@@ -2155,9 +2155,9 @@ function updateNewProductsBtn() {
  * 
  */
 function desktopNotifikation(title, message, image = null, requireInteraction = null, onClick = () => {}) {
-    const _vineLogo = 'https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/vine_logo.png';
-    const _vineLogoImp = 'https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/dev-main/vine_logo_important.png'
-    const _defaultImage = 'https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/dev-main/vine_logo_notification_image.png'
+    const _vineLogo = 'https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/vine_logo.png';
+    const _vineLogoImp = 'https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/vine_logo_important.png'
+    const _defaultImage = 'https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/vine_logo_notification_image.png'
 
     if (Notification.permission === 'granted') {
         const _notification = new Notification(title, {

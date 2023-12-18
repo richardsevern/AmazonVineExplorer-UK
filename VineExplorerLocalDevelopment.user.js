@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      9.9.9
 // @description  Better View and Search and Explore for Vine Products - Vine Voices Edition
-// @author       MarkusSR1984
+// @author       rs
 // @match        *://www.amazon.co.uk/*
 // @license      MIT
 // @icon         https://raw.githubusercontent.com/richardsevern/AmazonVineExplorer-uk/main/vine_logo.png
@@ -16,10 +16,10 @@
 // @grant        GM.xmlHttpRequest
 // @grant        GM.openInTab
 // @grant        unsafeWindow
-// @require      file://D:\Nextcloud New\SourceTree\AmazonVineExplorer\globals.js
-// @require      file://D:\Nextcloud New\SourceTree\AmazonVineExplorer\class_product.js
-// @require      file://D:\Nextcloud New\SourceTree\AmazonVineExplorer\class_db_handler.js
-// @require      file://D:\Nextcloud New\SourceTree\AmazonVineExplorer\VineExplorer.user.js
+// @require      file://D:\AmazonVineExplorer\globals.js
+// @require      file://D:\AmazonVineExplorer\class_product.js
+// @require      file://D:\AmazonVineExplorer\class_db_handler.js
+// @require      file://D:\AmazonVineExplorer\VineExplorer.user.js
 // ==/UserScript==
 
 
